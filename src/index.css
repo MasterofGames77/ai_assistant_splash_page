@@ -1,13 +1,65 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.email-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-signup input {
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.email-signup button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #e91e63;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.email-signup button:hover {
+  background-color: #c2185b;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-size: 1em;
+  color: #4caf50;
 }
