@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './index.css';
+import logo from './assets/video-game-wingman-logo.png'; // Ensure the correct path to your logo
 
 function App() {
   const [email, setEmail] = useState('');
@@ -48,30 +49,51 @@ function App() {
 
   return (
     <div className="container">
-      <div className="content">
-        <h1>Welcome to Video Game Wingman</h1>
-        <p>Join our waitlist and climb higher by inviting friends!</p>
-        <form className="email-signup" onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Enter referral code (optional)"
-            value={referralCode}
-            onChange={(e) => setReferralCode(e.target.value)}
-          />
-          <button type="submit" disabled={loading}>
-            {loading ? 'Processing...' : 'Sign Up'}
-          </button>
-        </form>
-        {loading && <div className="spinner"></div>} {/* Spinner element */}
-        {message && <div className="feedback">{message}</div>}
+      <div className="hero">
+        <img src={logo} alt="Video Game Wingman Logo" className="logo" />
+        {/* <h1>Video Game Wingman</h1> */}
+        <h2>Join the waitlist and elevate your gameplay!</h2>
       </div>
+      
+      {/* Rest of your content goes here */}
+      <h2>What is Video Game Wingman?</h2>
+      <p className="description">
+        Video Game Wingman empowers gamers with an unfair advantage through strategic insights and personalized analytics to elevate their gameplay and performance.
+      </p>
+  
+      <h2>What Can Video Game Wingman Do?</h2>
+      <ul className="features">
+        <li>Provide personalized game recommendations based on your preferences and play history.</li>
+        <li>Analyze your gameplay data to offer insights and strategies for improvement.</li>
+        <li>Retrieve detailed game information, including release dates, genres, and platforms.</li>
+        <li>Integrate data from sources like IGDB, RAWG, and Twitch to keep you updated on the latest trends.</li>
+        <li>Assist in discovering new games, tracking upcoming releases, and finding the best deals.</li>
+      </ul>
+  
+      <form className="email-signup" id="email-signup-form" method="post" onSubmit={handleSubmit}>
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required 
+        />
+  
+        <input 
+          type="text" 
+          name="referralCode" 
+          placeholder="Enter referral code (optional)"
+          value={referralCode}
+          onChange={(e) => setReferralCode(e.target.value)} 
+        />
+  
+        <button type="submit" disabled={loading}>
+          {loading ? 'Processing...' : 'Sign Up'}
+        </button>
+      </form>
+      {loading && <div className="spinner"></div>}
+      {message && <div className="feedback">{message}</div>}
     </div>
   );
 }
